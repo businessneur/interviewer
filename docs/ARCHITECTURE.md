@@ -14,6 +14,22 @@
 
 ---
 
+## 🧩 How to Scale (for concurrency) :
+
+Load Balancer: NGINX (with rate limiting, SSL termination)
+STT Backend: Faster-Whisper + CTranslate2 (GPU-optimized)
+TTS Backend: 
+  - Primary: Piper (CPU containers)
+  - Fallback: Kokoro (GPU containers)
+Queue System: Redis + Celery + KEDA (auto-scaling)
+Database: PostgreSQL (user data, interviews, analytics)
+Object Storage: S3-Compatible (audio files, backups)
+Caching: Redis (common interview questions, session data)
+Hosting: Kubernetes with horizontal pod autoscaling
+Security: JWT auth, API keys, network segmentation
+Monitoring: Prometheus + Grafana + ELK Stack
+
+---
 ## 🏗️ Complete Architecture Stack
 
 ### 1. Load Balancer Layer
