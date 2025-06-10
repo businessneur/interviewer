@@ -16,8 +16,8 @@
 
 ## 🧩 How to Scale (for concurrency) :
 
-### 1. Load Balancer: NGINX (with rate limiting, SSL termination)
-### 1. STT Backend: Faster-Whisper + CTranslate2 (GPU-optimized)
+** Load Balancer: NGINX (with rate limiting, SSL termination)**
+**STT Backend: Faster-Whisper + CTranslate2 (GPU-optimized)**
 ### 1. TTS Backend: 
   - Primary: Piper (CPU containers)
   - Fallback: Kokoro (GPU containers)
