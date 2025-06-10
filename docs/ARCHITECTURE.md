@@ -14,8 +14,6 @@
 
 ---
 
----
-
 ### 🏗️ Architecture Overview
 
 Our platform utilizes a robust, scalable, and cost-effective architecture:
