@@ -14,20 +14,24 @@
 
 ---
 
-## 🧩 How to Scale (for concurrency) :
+---
 
-** Load Balancer: NGINX (with rate limiting, SSL termination)**
-**STT Backend: Faster-Whisper + CTranslate2 (GPU-optimized)**
-### 1. TTS Backend: 
-  - Primary: Piper (CPU containers)
-  - Fallback: Kokoro (GPU containers)
-### 1. Queue System: Redis + Celery + KEDA (auto-scaling)
-### 1. Database: PostgreSQL (user data, interviews, analytics)
-### 1. Object Storage: S3-Compatible (audio files, backups)
-### 1. Caching: Redis (common interview questions, session data)
-### 1. Hosting: Kubernetes with horizontal pod autoscaling
-### 1. Security: JWT auth, API keys, network segmentation
-### 1. Monitoring: Prometheus + Grafana + ELK Stack
+### 🏗️ Architecture Overview
+
+Our platform utilizes a robust, scalable, and cost-effective architecture:
+
+* **Load Balancer:** NGINX (with rate limiting, SSL termination)
+* **STT Backend:** Faster-Whisper + CTranslate2 (GPU-optimized for high performance)
+* **TTS Backend:**
+    * **Primary:** Piper (CPU containers for cost-efficiency)
+    * **Fallback:** Kokoro (GPU containers for higher quality/resilience)
+* **Queue System:** Redis + Celery + KEDA (for asynchronous processing and auto-scaling)
+* **Database:** PostgreSQL (for user data, interview configurations, analytics)
+* **Object Storage:** S3-Compatible (for generated audio files, large data blobs, backups)
+* **Caching:** Redis (for common interview questions, generated audio, session data)
+* **Hosting:** Kubernetes (with Horizontal Pod Autoscaling for dynamic scaling)
+* **Security:** JWT authentication, API key management, network segmentation
+* **Monitoring:** Prometheus + Grafana + ELK Stack (for comprehensive observability)
 
 ---
 ## 🏗️ Complete Architecture Stack
